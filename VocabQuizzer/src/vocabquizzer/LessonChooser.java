@@ -22,9 +22,9 @@ public class LessonChooser extends JFrame
 	
 	private ArrayList<String> selectedLessons = null;
 	
-	static ArrayList<String> getSelectedLessons(Set<String> lessonNames)
+	static ArrayList<String> getSelectedLessons(Set<String> lessonNames, ArrayList<String> selectedLessons)
 	{
-		LessonChooser lessonChooser = new LessonChooser(lessonNames);
+		LessonChooser lessonChooser = new LessonChooser(lessonNames, selectedLessons);
 		synchronized (lessonChooser)
 		{
 			do
@@ -42,11 +42,11 @@ public class LessonChooser extends JFrame
 		return lessonChooser.selectedLessons;
 	}
 	
-	private LessonChooser(Set<String> lessonNames)
+	private LessonChooser(Set<String> lessonNames, ArrayList<String> selectedLessons)
 	{
 		super("Vocab Quizzer");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		layoutComponents(lessonNames);
+		layoutComponents(lessonNames, selectedLessons);
 		getRootPane().setDefaultButton(ok);
 		pack();
 		addListeners();
@@ -54,7 +54,7 @@ public class LessonChooser extends JFrame
 		setVisible(true);
 	}
 	
-	private void layoutComponents(Set<String> lessonNames)
+	private void layoutComponents(Set<String> lessonNames, ArrayList<String> selectedLessons)
 	{
 		setLayout(new GridBagLayout());
 		
@@ -73,7 +73,7 @@ public class LessonChooser extends JFrame
 		constraints.insets = new Insets(10, 5, 5, 10);
 		add(deselectAllButton, constraints);
 		
-		JPanel checkBoxPanel = createCheckBoxPanel(lessonNames);
+		JPanel checkBoxPanel = createCheckBoxPanel(lessonNames, selectedLessons);
 		constraints = new GridBagConstraints();
 		constraints.gridwidth = GridBagConstraints.REMAINDER;
 		constraints.weightx = 1;
@@ -89,7 +89,7 @@ public class LessonChooser extends JFrame
 		add(ok, constraints);
 	}
 	
-	private JPanel createCheckBoxPanel(Set<String> lessonNames)
+	private JPanel createCheckBoxPanel(Set<String> lessonNames, ArrayList<String> selectedLessons)
 	{
 		JPanel checkBoxPanel = new JPanel();
 		checkBoxPanel.setLayout(new GridBagLayout());
@@ -98,7 +98,7 @@ public class LessonChooser extends JFrame
 		int i = 0;
 		for (String lessonName : lessonNames)
 		{
-			lessonCheckboxes[i] = new JCheckBox(lessonName, true);
+			lessonCheckboxes[i] = new JCheckBox(lessonName, selectedLessons == null || selectedLessons.contains(lessonName));
 			GridBagConstraints constraints = new GridBagConstraints();
 			constraints.gridx = i / 10;
 			constraints.gridy = i % 10;

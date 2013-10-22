@@ -12,35 +12,39 @@ public class VocabQuizzer
 	
 	public static void main(String[] args)
 	{
-		ArrayList<String> selectedLessons = LessonChooser.getSelectedLessons(ALL_VOCAB_WORDS.keySet());
-		ArrayList<String[]> wordPairList = new ArrayList<String[]>();
-		for (String selectedLesson : selectedLessons)
-			for (String[] wordPair : ALL_VOCAB_WORDS.get(selectedLesson))
-				wordPairList.add(wordPair);
-		Collections.shuffle(wordPairList);
-		
-		QuizzerFrame frame = new QuizzerFrame();
-		int numberCorrect = 0;
-		int numberCorrectWithMultipleGuesses = 0;
-		int numberTranslationShown = 0;
-		for (String[] wordPair : wordPairList)
+		ArrayList<String> selectedLessons = null;
+		while (true)
 		{
-			switch (frame.showNextWord(wordPair[0], wordPair[1]))
+			selectedLessons = LessonChooser.getSelectedLessons(ALL_VOCAB_WORDS.keySet(), selectedLessons);
+			ArrayList<String[]> wordPairList = new ArrayList<String[]>();
+			for (String selectedLesson : selectedLessons)
+				for (String[] wordPair : ALL_VOCAB_WORDS.get(selectedLesson))
+					wordPairList.add(wordPair);
+			Collections.shuffle(wordPairList);
+			
+			QuizzerFrame frame = new QuizzerFrame();
+			int numberCorrect = 0;
+			int numberCorrectWithMultipleGuesses = 0;
+			int numberTranslationShown = 0;
+			for (String[] wordPair : wordPairList)
 			{
-				case CORRECT:
-					numberCorrect++;
-					break;
-				case CORRECT_WITH_MULTIPLE_GUESSES:
-					numberCorrectWithMultipleGuesses++;
-					break;
-				case TRANSLATION_SHOWN:
-					numberTranslationShown++;
-					break;
+				switch (frame.showNextWord(wordPair[0], wordPair[1]))
+				{
+					case CORRECT:
+						numberCorrect++;
+						break;
+					case CORRECT_WITH_MULTIPLE_GUESSES:
+						numberCorrectWithMultipleGuesses++;
+						break;
+					case TRANSLATION_SHOWN:
+						numberTranslationShown++;
+						break;
+				}
 			}
+			JOptionPane.showMessageDialog(frame, numberCorrect + " Correct on the first try.\n" + numberCorrectWithMultipleGuesses + " Correct with multiple guesses.\n" +
+					numberTranslationShown + " Translations shown.", "Vocab Quizzer Results", JOptionPane.INFORMATION_MESSAGE);
+			frame.dispose();
 		}
-		JOptionPane.showMessageDialog(frame, numberCorrect + " Correct on the first try.\n" + numberCorrectWithMultipleGuesses + " Correct with multiple guesses.\n" +
-				numberTranslationShown + " Translations shown.", "Vocab Quizzer Results", JOptionPane.INFORMATION_MESSAGE);
-		frame.dispose();
 	}
 	
 	private static LinkedHashMap<String, String[][]> createAllVocabWords()
