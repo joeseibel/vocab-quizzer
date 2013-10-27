@@ -11,8 +11,27 @@ public class VocabQuizzerTester
 	private static void testLessonInOrder(String lessonName)
 	{
 		QuizzerFrame frame = new QuizzerFrame();
+		int numberCorrectOnFirstTry = 0;
+		int numberCorrectWithMultipleGuesses = 0;
+		int numberTranslationShown = 0;
+		int wordPairListIndex = 0;
 		for (String[] wordPair : VocabQuizzer.ALL_VOCAB_WORDS.get(lessonName))
-			frame.showNextWord(wordPair[0], wordPair[1]);
+		{
+			switch (frame.showNextWord(wordPair[0], wordPair[1], wordPairListIndex + "/" + VocabQuizzer.ALL_VOCAB_WORDS.get(lessonName).length, numberCorrectOnFirstTry,
+					numberCorrectWithMultipleGuesses, numberTranslationShown))
+			{
+				case CORRECT:
+					numberCorrectOnFirstTry++;
+					break;
+				case CORRECT_WITH_MULTIPLE_GUESSES:
+					numberCorrectWithMultipleGuesses++;
+					break;
+				case TRANSLATION_SHOWN:
+					numberTranslationShown++;
+					break;
+			}
+			wordPairListIndex++;
+		}
 		frame.dispose();
 	}
 	
@@ -21,7 +40,7 @@ public class VocabQuizzerTester
 	{
 		QuizzerFrame frame = new QuizzerFrame();
 		String[] wordPair = VocabQuizzer.ALL_VOCAB_WORDS.get(lessonName)[index];
-		frame.showNextWord(wordPair[0], wordPair[1]);
+		frame.showNextWord(wordPair[0], wordPair[1], "0/1", 0, 0, 0);
 		frame.dispose();
 	}
 }

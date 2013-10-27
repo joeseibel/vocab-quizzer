@@ -23,15 +23,17 @@ public class VocabQuizzer
 			Collections.shuffle(wordPairList);
 			
 			QuizzerFrame frame = new QuizzerFrame();
-			int numberCorrect = 0;
+			int numberCorrectOnFirstTry = 0;
 			int numberCorrectWithMultipleGuesses = 0;
 			int numberTranslationShown = 0;
+			int wordPairListIndex = 0;
 			for (String[] wordPair : wordPairList)
 			{
-				switch (frame.showNextWord(wordPair[0], wordPair[1]))
+				switch (frame.showNextWord(wordPair[0], wordPair[1], wordPairListIndex + "/" + wordPairList.size(), numberCorrectOnFirstTry,
+						numberCorrectWithMultipleGuesses, numberTranslationShown))
 				{
 					case CORRECT:
-						numberCorrect++;
+						numberCorrectOnFirstTry++;
 						break;
 					case CORRECT_WITH_MULTIPLE_GUESSES:
 						numberCorrectWithMultipleGuesses++;
@@ -40,9 +42,10 @@ public class VocabQuizzer
 						numberTranslationShown++;
 						break;
 				}
+				wordPairListIndex++;
 			}
-			JOptionPane.showMessageDialog(frame, numberCorrect + " Correct on the first try.\n" + numberCorrectWithMultipleGuesses + " Correct with multiple guesses.\n" +
-					numberTranslationShown + " Translations shown.", "Vocab Quizzer Results", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(frame, numberCorrectOnFirstTry + " Correct on the first try.\n" + numberCorrectWithMultipleGuesses +
+					" Correct with multiple guesses.\n" + numberTranslationShown + " Translations shown.", "Vocab Quizzer Results", JOptionPane.INFORMATION_MESSAGE);
 			frame.dispose();
 		}
 	}

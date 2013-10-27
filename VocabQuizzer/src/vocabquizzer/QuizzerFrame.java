@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -21,6 +22,10 @@ class QuizzerFrame extends JFrame
 	private String correctEnglishAnswer = null;
 	private boolean incorrectGuessGiven = false;
 	
+	private JLabel progressLabel = null;
+	private JLabel correctOnFirstTryLabel = null;
+	private JLabel correctOnMultipleGuessesLabel = null;
+	private JLabel translationsShownLabel = null;
 	private JLabel hebrewLabel = null;
 	private JTextField englishField = null;
 	private JButton submitAnswerButton = null;
@@ -36,9 +41,13 @@ class QuizzerFrame extends JFrame
 		setSize(700, 300);
 	}
 	
-	QuizResult showNextWord(String hebrewWord, String correctEnglishAnswer)
+	QuizResult showNextWord(String hebrewWord, String correctEnglishAnswer, String progress, int correctOnFirstTry, int correctOnMultipleGuesses, int translationsShown)
 	{
 		hebrewLabel.setText(hebrewWord);
+		progressLabel.setText(progress);
+		correctOnFirstTryLabel.setText(Integer.toString(correctOnFirstTry));
+		correctOnMultipleGuessesLabel.setText(Integer.toString(correctOnMultipleGuesses));
+		translationsShownLabel.setText(Integer.toString(translationsShown));
 		this.correctEnglishAnswer = correctEnglishAnswer;
 		incorrectGuessGiven = false;
 		submitAnswerButton.setEnabled(true);
@@ -71,10 +80,18 @@ class QuizzerFrame extends JFrame
 	{
 		setLayout(new GridBagLayout());
 		
+		JPanel statusPanel = createStatusPanel();
+		GridBagConstraints constraints = new GridBagConstraints();
+		constraints.gridwidth = GridBagConstraints.REMAINDER;
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		constraints.fill = GridBagConstraints.HORIZONTAL;
+		add(statusPanel, constraints);
+		
 		hebrewLabel = new JLabel();
 		hebrewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		hebrewLabel.setFont(hebrewLabel.getFont().deriveFont(100.0f));
-		GridBagConstraints constraints = new GridBagConstraints();
+		constraints = new GridBagConstraints();
 		constraints.gridwidth = GridBagConstraints.REMAINDER;
 		constraints.weightx = 1;
 		constraints.weighty = 1;
@@ -102,6 +119,63 @@ class QuizzerFrame extends JFrame
 		constraints.weightx = 1;
 		constraints.weighty = 1;
 		add(showTranslationButton, constraints);
+	}
+	
+	private JPanel createStatusPanel()
+	{
+		JPanel statusPanel = new JPanel(new GridBagLayout());
+		
+		JLabel label = new JLabel("Progress:");
+		GridBagConstraints constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(label, constraints);
+		
+		label = new JLabel("Correct on First Try:");
+		constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(label, constraints);
+		
+		label = new JLabel("Correct on Multiple Guesses:");
+		constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(label, constraints);
+		
+		label = new JLabel("Translations Shown:");
+		constraints = new GridBagConstraints();
+		constraints.gridwidth = GridBagConstraints.REMAINDER;
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(label, constraints);
+		
+		progressLabel = new JLabel("52/356");
+		constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(progressLabel, constraints);
+		
+		correctOnFirstTryLabel = new JLabel("32");
+		constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(correctOnFirstTryLabel, constraints);
+		
+		correctOnMultipleGuessesLabel = new JLabel("65");
+		constraints = new GridBagConstraints();
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(correctOnMultipleGuessesLabel, constraints);
+		
+		translationsShownLabel = new JLabel("654");
+		constraints = new GridBagConstraints();
+		constraints.gridwidth = GridBagConstraints.REMAINDER;
+		constraints.weightx = 1;
+		constraints.weighty = 1;
+		statusPanel.add(translationsShownLabel, constraints);
+		
+		return statusPanel;
 	}
 	
 	private void addListeners()
