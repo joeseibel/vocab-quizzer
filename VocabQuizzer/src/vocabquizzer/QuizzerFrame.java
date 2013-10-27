@@ -33,7 +33,7 @@ class QuizzerFrame extends JFrame
 		layoutComponents();
 		addListeners();
 		getRootPane().setDefaultButton(submitAnswerButton);
-		setSize(600, 300);
+		setSize(700, 300);
 	}
 	
 	QuizResult showNextWord(String hebrewWord, String correctEnglishAnswer)

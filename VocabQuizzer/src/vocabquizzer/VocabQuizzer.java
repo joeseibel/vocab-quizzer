@@ -132,6 +132,67 @@ public class VocabQuizzer
 				{"שָׂדֶה", "field"},
 				{"שָׁמַ֣יִם", "heavens, sky"}
 		});
+		allVocabWords.put("Lesson 8", new String[][]{
+				{"(גָּדֹל) גָּדוֹל", "great, large"},
+				{"זָקֵן", "old (of persons only)"},
+				{"חָדָשׁ", "new"},
+				{"חָזָק", "strong"},
+				{"חַי", "living"},
+				{"חָכָם", "wise"},
+				{"יָפֶה", "beautiful, fair, handsome"},
+				{"יָשָׁר", "straight, right, upright"},
+				{"מַר", "bitter"},
+				{"(קָדֹשׁ) קָדוֹשׁ", "holy"},
+				{"קָטֹן", "small"},
+				{"(קָרֹב) קָרוֹב", "near"},
+				{"קָשֶׁה", "hard, difficult"},
+				{"רַב", "many, much, great"},
+				{"(רָחֹק) רָחוֹק", "far, distant"},
+				{"רַע", "evil, bad"},
+				{"רָעָה", "(an) evil"},
+				{"תָּמִים", "perfect, complete, whole"}
+		});
+		allVocabWords.put("Personal Pronouns", new String[][]{
+				{"אֲנִי ,אָנֹכִי", "I"},
+				{"אַתָּה", "you (ms)"},
+				{"אַתְּ", "you (fs)"},
+				{"הוּא", "he/it"},
+				{"הִיא", "she/it"},
+				{"אֲנַ֣חְנוּ ,נַ֣חְנוּ ,אֲנוּ", "we"},
+				{"אַתֶּם", "you (mp)"},
+				{"אַתֶּן ,אַתֵּ֣נָה", "you (fp)"},
+				{"הֵם ,הֵ֣מָּה", "they (m)"},
+				{"הֵן ,הֵ֣נָּה", "they (f)"}
+		});
+		allVocabWords.put("Demonstrative Pronouns", new String[][]{
+				{"זֶה", "this (m)"},
+				{"זֹאת", "this (f)"},
+				{"הוּא", "that (m)"},
+				{"הִיא", "that (f)"},
+				{"אֵ֣לֶּה", "these"},
+				{"הֵ֣מָּה (הֵם)", "those (m)"},
+				{"הֵ֣נָּה (הֵן)", "those (f)"}
+		});
+		allVocabWords.put("Lesson 9", new String[][]{
+				{"אֶ֣בֶן", "stone"},
+				{"דּוֹר", "generation"},
+				{"יְרוּשָׁלַ֣יִם", "Jerusalem"},
+				{"כֹּה", "thus"},
+				{"לֶ֣חֶם", "bread"},
+				{"מִדְבָּר", "wilderness, desert"},
+				{"מָה", "What?"},
+				{"מִי", "Who?"},
+				{"מִשְׁפָּט", "judgement, justice"},
+				{"משֶׁה", "Moses"},
+				{"נָבִיא", "prophet"},
+				{"נַ֣עַר", "lad, youth"},
+				{"נַעֲרָה", "maiden, young woman"},
+				{"סֵ֣פֶר", "book"},
+				{"פֶּן", "lest"},
+				{"רֶ֣גֶל", "foot"},
+				{"שֶׁ֣מֶן", "oil, fat"},
+				{"תּוֹרָה", "law, instruction"}
+		});
 		return allVocabWords;
 	}
 }
