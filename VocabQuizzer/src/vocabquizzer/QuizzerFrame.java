@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 class QuizzerFrame extends JFrame
 {
@@ -31,6 +33,7 @@ class QuizzerFrame extends JFrame
 	private JButton submitAnswerButton = null;
 	private JButton showTranslationButton = null;
 	
+	//Construct from event dispatch thread.
 	QuizzerFrame()
 	{
 		super("Vocab Quizzer");
@@ -41,22 +44,42 @@ class QuizzerFrame extends JFrame
 		setSize(700, 300);
 	}
 	
-	QuizResult showNextWord(String hebrewWord, String correctEnglishAnswer, String progress, int correctOnFirstTry, int correctOnMultipleGuesses, int translationsShown)
+	//Call from main thread.
+	QuizResult showNextWord(final String hebrewWord, final String correctEnglishAnswer, final String progress, final int correctOnFirstTry,
+			final int correctOnMultipleGuesses, final int translationsShown)
 	{
-		hebrewLabel.setText(hebrewWord);
-		progressLabel.setText(progress);
-		correctOnFirstTryLabel.setText(Integer.toString(correctOnFirstTry));
-		correctOnMultipleGuessesLabel.setText(Integer.toString(correctOnMultipleGuesses));
-		translationsShownLabel.setText(Integer.toString(translationsShown));
-		this.correctEnglishAnswer = correctEnglishAnswer;
-		incorrectGuessGiven = false;
-		submitAnswerButton.setEnabled(true);
-		showTranslationButton.setEnabled(true);
-		englishField.setText(null);
-		englishField.requestFocus();
-		if (!isVisible())
-			setLocationByPlatform(true);
-		setVisible(true);
+		try
+		{
+			SwingUtilities.invokeAndWait(new Runnable()
+			{
+				@Override
+				public void run()
+				{
+					hebrewLabel.setText(hebrewWord);
+					progressLabel.setText(progress);
+					correctOnFirstTryLabel.setText(Integer.toString(correctOnFirstTry));
+					correctOnMultipleGuessesLabel.setText(Integer.toString(correctOnMultipleGuesses));
+					translationsShownLabel.setText(Integer.toString(translationsShown));
+					QuizzerFrame.this.correctEnglishAnswer = correctEnglishAnswer;
+					incorrectGuessGiven = false;
+					submitAnswerButton.setEnabled(true);
+					showTranslationButton.setEnabled(true);
+					englishField.setText(null);
+					englishField.requestFocus();
+					if (!isVisible())
+						setLocationByPlatform(true);
+					setVisible(true);
+				}
+			});
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
 		synchronized (this)
 		{
 			do
@@ -71,8 +94,27 @@ class QuizzerFrame extends JFrame
 				}
 			} while (currentQuizResult == null);
 		}
-		submitAnswerButton.setEnabled(false);
-		showTranslationButton.setEnabled(false);
+		try
+		{
+			SwingUtilities.invokeAndWait(new Runnable()
+			{
+				
+				@Override
+				public void run()
+				{
+					submitAnswerButton.setEnabled(false);
+					showTranslationButton.setEnabled(false);
+				}
+			});
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
 		return currentQuizResult;
 	}
 	

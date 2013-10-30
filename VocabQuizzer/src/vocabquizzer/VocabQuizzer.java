@@ -1,10 +1,12 @@
 package vocabquizzer;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 public class VocabQuizzer
 {
@@ -22,7 +24,7 @@ public class VocabQuizzer
 					wordPairList.add(wordPair);
 			Collections.shuffle(wordPairList);
 			
-			QuizzerFrame frame = new QuizzerFrame();
+			final QuizzerFrame frame = createQuizzerFrame();
 			int numberCorrectOnFirstTry = 0;
 			int numberCorrectWithMultipleGuesses = 0;
 			int numberTranslationShown = 0;
@@ -44,9 +46,31 @@ public class VocabQuizzer
 				}
 				wordPairListIndex++;
 			}
-			JOptionPane.showMessageDialog(frame, numberCorrectOnFirstTry + " Correct on the first try.\n" + numberCorrectWithMultipleGuesses +
-					" Correct with multiple guesses.\n" + numberTranslationShown + " Translations shown.", "Vocab Quizzer Results", JOptionPane.INFORMATION_MESSAGE);
-			frame.dispose();
+			final int finalNumberCorrectOnFirstTry = numberCorrectOnFirstTry;
+			final int finalNumberCorrectWithMultipleGuesses = numberCorrectWithMultipleGuesses;
+			final int finalNumberTranslationShown = numberTranslationShown;
+			try
+			{
+				SwingUtilities.invokeAndWait(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						JOptionPane.showMessageDialog(frame, finalNumberCorrectOnFirstTry + " Correct on the first try.\n" + finalNumberCorrectWithMultipleGuesses +
+								" Correct with multiple guesses.\n" + finalNumberTranslationShown + " Translations shown.", "Vocab Quizzer Results",
+								JOptionPane.INFORMATION_MESSAGE);
+						frame.dispose();
+					}
+				});
+			}
+			catch (InvocationTargetException e)
+			{
+				e.printStackTrace();
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -197,5 +221,33 @@ public class VocabQuizzer
 				{"תּוֹרָה", "law, instruction"}
 		});
 		return allVocabWords;
+	}
+	
+	static final QuizzerFrame createQuizzerFrame()
+	{
+		class QuizzerFrameCreator implements Runnable
+		{
+			private QuizzerFrame quizzerFrame = null;
+			
+			@Override
+			public void run()
+			{
+				quizzerFrame = new QuizzerFrame();
+			}
+		}
+		QuizzerFrameCreator quizzerFrameCreator = new QuizzerFrameCreator();
+		try
+		{
+			SwingUtilities.invokeAndWait(quizzerFrameCreator);
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		return quizzerFrameCreator.quizzerFrame;
 	}
 }

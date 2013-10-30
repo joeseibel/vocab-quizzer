@@ -1,5 +1,7 @@
 package vocabquizzer;
 
+import javax.swing.SwingUtilities;
+
 public class VocabQuizzerTester
 {
 	public static void main(String[] args)
@@ -10,7 +12,7 @@ public class VocabQuizzerTester
 	
 	private static void testLessonInOrder(String lessonName)
 	{
-		QuizzerFrame frame = new QuizzerFrame();
+		final QuizzerFrame frame = VocabQuizzer.createQuizzerFrame();
 		int numberCorrectOnFirstTry = 0;
 		int numberCorrectWithMultipleGuesses = 0;
 		int numberTranslationShown = 0;
@@ -32,15 +34,29 @@ public class VocabQuizzerTester
 			}
 			wordPairListIndex++;
 		}
-		frame.dispose();
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				frame.dispose();
+			}
+		});
 	}
 	
 	@SuppressWarnings("unused")
 	private static void testIndividual(String lessonName, int index)
 	{
-		QuizzerFrame frame = new QuizzerFrame();
+		final QuizzerFrame frame = VocabQuizzer.createQuizzerFrame();
 		String[] wordPair = VocabQuizzer.ALL_VOCAB_WORDS.get(lessonName)[index];
 		frame.showNextWord(wordPair[0], wordPair[1], "0/1", 0, 0, 0);
-		frame.dispose();
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				frame.dispose();
+			}
+		});
 	}
 }

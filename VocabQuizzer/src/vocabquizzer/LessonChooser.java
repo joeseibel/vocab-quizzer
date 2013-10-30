@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class LessonChooser extends JFrame
 {
@@ -22,9 +24,33 @@ public class LessonChooser extends JFrame
 	
 	private ArrayList<String> selectedLessons = null;
 	
-	static ArrayList<String> getSelectedLessons(Set<String> lessonNames, ArrayList<String> selectedLessons)
+	//Call from main thread.
+	static ArrayList<String> getSelectedLessons(final Set<String> lessonNames, final ArrayList<String> selectedLessons)
 	{
-		LessonChooser lessonChooser = new LessonChooser(lessonNames, selectedLessons);
+		class LessonChooserCreator implements Runnable
+		{
+			private LessonChooser lessonChooser = null;
+			
+			@Override
+			public void run()
+			{
+				lessonChooser = new LessonChooser(lessonNames, selectedLessons);
+			}
+		}
+		LessonChooserCreator lessonChooserCreator = new LessonChooserCreator();
+		try
+		{
+			SwingUtilities.invokeAndWait(lessonChooserCreator);
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		final LessonChooser lessonChooser = lessonChooserCreator.lessonChooser;
 		synchronized (lessonChooser)
 		{
 			do
@@ -38,7 +64,25 @@ public class LessonChooser extends JFrame
 				}
 			} while (lessonChooser.selectedLessons == null);
 		}
-		lessonChooser.dispose();
+		try
+		{
+			SwingUtilities.invokeAndWait(new Runnable()
+			{
+				@Override
+				public void run()
+				{
+					lessonChooser.dispose();
+				}
+			});
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
 		return lessonChooser.selectedLessons;
 	}
 	
