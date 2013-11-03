@@ -220,6 +220,47 @@ public class VocabQuizzer
 				{"שֶׁ֣מֶן", "oil, fat"},
 				{"תּוֹרָה", "law, instruction"}
 		});
+		allVocabWords.put("Lesson 10", new String[][]{
+				{"אֹ֣הֶל", "tent"},
+				{"אֱמֶת", "truth"},
+				{"אֵשׁ", "fire"},
+				{"דָּם", "blood"},
+				{"זָהָב", "gold"},
+				{"חַיָּה", "living thing, animal"},
+				{"חָכְמָה", "wisdom"},
+				{"חֶ֣סֶד", "goodness, kindness"},
+				{"יַ֣יִן", "wine"},
+				{"כּוֹכָב", "star"},
+				{"כֶּ֣סֶף", "silver"},
+				{"מַלְכָּה", "queen"},
+				{"מִצְרַ֣יִם", "Egypt"},
+				{"סוּס", "horse"},
+				{"עֵת", "time"},
+				{"רֵעַ", "friend"},
+				{"פֶּה", "mouth"},
+				{"תְּהוֹם", "great deep, abyss"}
+		});
+		allVocabWords.put("Lesson 11", new String[][]{
+				{"אָהַב", "he loved"},
+				{"אָמַר", "he said"},
+				{"בָּרָא", "he created"},
+				{"הָיָה", "he was, became"},
+				{"הָלַךְ", "he walked, went"},
+				{"יָדַע", "he knew"},
+				{"יַחְדָּו", "together"},
+				{"יֶ֣לֶד", "child"},
+				{"כָּבוֹד", "glory, honor"},
+				{"תֵּבָה", "ark"},
+				{"עוֹד", "again, yet, still"},
+				{"עַל־פְּנֵי", "over, above"},
+				{"עַתָּה", "now"},
+				{"פֹּה", "here"},
+				{"צְבָאוֹת", "hosts, armies"},
+				{"יְהוָה צְבָאוֹת", "LORD of hosts"},
+				{"שַׁבָּת", "sabbath"},
+				{"שָׁם", "there"},
+				{"שְׁנֵיהֶם", "the two of them"}
+		});
 		return allVocabWords;
 	}
 	
