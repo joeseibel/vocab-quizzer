@@ -37,7 +37,7 @@ class ShowTranslationDialog extends JDialog
 		constraints.weightx = 1;
 		constraints.weighty = 1;
 		constraints.fill = GridBagConstraints.HORIZONTAL;
-		constraints.ipadx = 10;
+		constraints.ipadx = 15;
 		constraints.insets = new Insets(10, 20, 10, 20);
 		add(hebrewLabel, constraints);
 		

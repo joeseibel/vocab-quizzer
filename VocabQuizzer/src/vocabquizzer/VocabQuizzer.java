@@ -261,6 +261,58 @@ public class VocabQuizzer
 				{"שָׁם", "there"},
 				{"שְׁנֵיהֶם", "the two of them"}
 		});
+		allVocabWords.put("Lesson 12", new String[][]{
+				{"אוֹ", "or"},
+				{"אוֹת", "sign"},
+				{"אֵל", "God"},
+				{"הִנֵּה ,הֵן", "behold"},
+				{"זֶ֣רַע", "seed"},
+				{"חֲצִי", "half"},
+				{"לָקַח", "he took"},
+				{"מָלַךְ", "he reigned, became king"},
+				{"מָצָא", "he found"},
+				{"נָפַל", "he fell"},
+				{"עָבַד", "he served"},
+				{"עָלָה", "he went up"},
+				{"פָּקַד", "he visited, appointed"},
+				{"קָרָא", "he called"},
+				{"שָׁכַב", "he lay down"},
+				{"שָׁלַח", "he sent"},
+				{"שָׁמַע", "he heard, obeyed"},
+				{"שָׁמַר", "he kept"}
+		});
+		allVocabWords.put("Feminine Absolute Numbers", new String[][]{
+				{"אַחַת", "1"},
+				{"שְׁתַּ֣יִם", "2"},
+				{"שָׁלוֹשׁ", "3"},
+				{"אַרְבַּע", "4"},
+				{"חָמֵשׁ", "5"},
+				{"שֵׁשׁ", "6"},
+				{"שֶׁ֣בַע", "7"},
+				{"שְׁמֹנֶה", "8"},
+				{"תֵּ֣שַׁע", "9"},
+				{"עֶ֣שֶׂר", "10"}
+		});
+		allVocabWords.put("Lesson 13", new String[][]{
+				{"אָכַל", "he ate"},
+				{"גָּנַב", "he stole"},
+				{"דְּמוּת", "likeness, image"},
+				{"דַּ֣עַת", "knowledge"},
+				{"הַיִוֹם", "today"},
+				{"הֵיכָל", "temple"},
+				{"חֹ֣דֶשׁ", "new moon, month"},
+				{"חוֹמָה", "wall"},
+				{"כָּתַב", "he wrote"},
+				{"לָכֵן", "therefore"},
+				{"מַלְכּוּת", "kingdom"},
+				{"נֶ֣גֶב", "Negev, dry country, south"},
+				{"נָתַן", "he gave"},
+				{"עָמַד", "he stood"},
+				{"עָשָׂה", "he did, made"},
+				{"צֹאן", "flock, sheep"},
+				{"צַדִּיק", "righteous one"},
+				{"צֶ֣לֶם", "image, likeness"}
+		});
 		return allVocabWords;
 	}
 	
