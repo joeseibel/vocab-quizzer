@@ -313,6 +313,26 @@ public class VocabQuizzer
 				{"צַדִּיק", "righteous one"},
 				{"צֶ֣לֶם", "image, likeness"}
 		});
+		allVocabWords.put("Lesson 14", new String[][]{
+				{"אֶחָד", "one"},
+				{"אֵת", "with"},
+				{"בּדל", "he separated, divided"},
+				{"בָּנָה", "he built"},
+				{"בּקשׁ", "he sought"},
+				{"בַּרְזֶל", "iron"},
+				{"דּבר", "he spoke"},
+				{"זָכָר", "male"},
+				{"כֹּהֵן", "priest"},
+				{"כֶּ֣רֶם", "vineyard"},
+				{"כָּרַת", "he cut, cut off"},
+				{"מִין", "species, kind"},
+				{"מִלְחָמָה", "war, battle"},
+				{"נְחֹ֣שֶׁת", "copper, bronze"},
+				{"נְקֵבָה", "female"},
+				{"עָנָן", "cloud"},
+				{"פַּר", "young bull"},
+				{"קֶ֣רֶב", "midst"}
+		});
 		return allVocabWords;
 	}
 	
