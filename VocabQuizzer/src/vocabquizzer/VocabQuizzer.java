@@ -333,6 +333,26 @@ public class VocabQuizzer
 				{"פַּר", "young bull"},
 				{"קֶ֣רֶב", "midst"}
 		});
+		allVocabWords.put("Lesson 15", new String[][]{
+				{"אַ֣יִל", "ram"},
+				{"בּוֹא", "to come, go"},
+				{"זָכַר", "he remembered"},
+				{"חָיָה", "he lived, revived"},
+				{"מָשַׁל", "he ruled"},
+				{"עֶ֣בֶד", "servant, slave"},
+				{"עָבַר", "he passed over, through"},
+				{"עוֹלָם", "eternity"},
+				{"קוּם", "to arise, stand"},
+				{"שָׂפָה", "lip, speech, edge"},
+				{"שָׁאַל", "he asked"},
+				{"שָׁבַר", "he broke in pieces"},
+				{"שׁוּב", "to turn, return"},
+				{"שׁוֹפָר", "ram's horn, trumpet"},
+				{"שָׁכַח", "he forgot"},
+				{"שָׁפַט", "he judged, delivered"},
+				{"תָּמִיד", "continuously"},
+				{"תְּפִלָּה", "prayer"}
+		});
 		return allVocabWords;
 	}
 	
