@@ -353,6 +353,26 @@ public class VocabQuizzer
 				{"תָּמִיד", "continuously"},
 				{"תְּפִלָּה", "prayer"}
 		});
+		allVocabWords.put("Lesson 16", new String[][]{
+				{"בֶּ֣טֶן", "belly, body, womb"},
+				{"בּרך", "he blessed"},
+				{"גָּאַל", "he redeemed"},
+				{"הָלַל", "he praised"},
+				{"חַטָּאת", "sin"},
+				{"לחם", "he fought"},
+				{"לָמַד", "he learned"},
+				{"מָלֵא", "he was full"},
+				{"מָלַט", "he escaped"},
+				{"נָשָׂא", "he lifted, carried"},
+				{"סָתַר", "he concealed"},
+				{"עָוֹן", "iniquity, guilt"},
+				{"פֶּ֣שַׁע", "rebellion, transgression"},
+				{"קָבַר", "he buried"},
+				{"רָאָה", "he saw"},
+				{"רָקִיעַ", "expanse, firmament"},
+				{"שָׂרַף", "he burned"},
+				{"שָׁפַךְ", "he poured out"}
+		});
 		return allVocabWords;
 	}
 	
