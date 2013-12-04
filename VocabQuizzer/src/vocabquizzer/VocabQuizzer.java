@@ -373,6 +373,26 @@ public class VocabQuizzer
 				{"שָׂרַף", "he burned"},
 				{"שָׁפַךְ", "he poured out"}
 		});
+		allVocabWords.put("Lesson 17", new String[][]{
+				{"בָּטַח", "he trusted"},
+				{"גָּדַל", "he was (became) great"},
+				{"דָּרַשׁ", "he sought, inquired"},
+				{"דֶּ֣שֶׁא", "grass"},
+				{"הָרַג", "he killed, slew"},
+				{"זָבַח", "he sacrificed"},
+				{"חָזַק", "he was (became) strong"},
+				{"חָשַׁב", "he thought, devised, reckoned"},
+				{"כָּבֵד", "he was (became) heavy"},
+				{"כָּנָף", "wing, skirt"},
+				{"כּפר", "he covered, made atonement"},
+				{"לָבַשׁ", "he put on, wore"},
+				{"נַ֣חַל", "torrent valley, wadi"},
+				{"עָזַב", "he abandoned, left, forsook"},
+				{"קָרַב", "he drew near, approached"},
+				{"רָדַף", "he pursued, persecuted"},
+				{"שֵׁ֣בֶט", "rod, staff, scepter, tribe"},
+				{"שָׁכַן", "he settled, dwelt"}
+		});
 		return allVocabWords;
 	}
 	
