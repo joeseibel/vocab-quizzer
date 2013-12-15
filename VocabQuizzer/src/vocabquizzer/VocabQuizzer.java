@@ -393,6 +393,26 @@ public class VocabQuizzer
 				{"שֵׁ֣בֶט", "rod, staff, scepter, tribe"},
 				{"שָׁכַן", "he settled, dwelt"}
 		});
+		allVocabWords.put("Lesson 18", new String[][]{
+				{"יוֹמָם", "daily"},
+				{"יָצָא", "he went out"},
+				{"יָרֵא", "he feared"},
+				{"יָשַׁב", "he sat, dwelt"},
+				{"ישׁע", "he saved, delivered"},
+				{"מוּת", "to die"},
+				{"נצל", "he delivered"},
+				{"ספר", "he counted"},
+				{"עָזַר", "he helped"},
+				{"עָנָה", "he answered, replied"},
+				{"פּלל", "he prayed"},
+				{"פָּרָה", "he was fruitful"},
+				{"צוה", "he commanded"},
+				{"רָבָה", "he became many, multiplied"},
+				{"שִׂים", "to put, place"},
+				{"שָׂמַח", "he rejoiced, was glad"},
+				{"שׁבע", "he swore"},
+				{"שׁלך", "he cast, threw"}
+		});
 		return allVocabWords;
 	}
 	
