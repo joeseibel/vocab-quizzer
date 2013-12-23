@@ -413,6 +413,32 @@ public class VocabQuizzer
 				{"שׁבע", "he swore"},
 				{"שׁלך", "he cast, threw"}
 		});
+		allVocabWords.put("Lesson 19", new String[][]{
+				{"אָבַד", "he perished"},
+				{"אָסַף", "he gathered"},
+				{"בִּין", "to understand, discern"},
+				{"בָּרַח", "he fled"},
+				{"חָדַל", "he ceased"},
+				{"חָטָא", "he sinned, missed the mark"},
+				{"יָכֹל", "he was able"},
+				{"יָלַד", "he begot (children)"},
+				{"יָסַף", "he added"},
+				{"יָרַד", "he went down"},
+				{"יָרַשׁ", "he possessed, subdued"},
+				{"כּוּן", "to be fixed, firm, established"},
+				{"כָּלָה", "he (it) was completed, finished"},
+				{"מאן", "he refused"},
+				{"מָאַס", "he rejected, despised"},
+				{"מָכַר", "he sold"},
+				{"נגד", "he told, declared"},
+				{"נָטָה", "he stretched out, extended"},
+				{"נכה", "he struck, killed"},
+				{"רוּם", "to be high, exalted"},
+				{"רָפָא", "he healed, cured"},
+				{"רָצָה", "he was gracious, took delight in"},
+				{"שָׂנֵא", "he hated"},
+				{"שָׁתָה", "he drank"}
+		});
 		return allVocabWords;
 	}
 	
