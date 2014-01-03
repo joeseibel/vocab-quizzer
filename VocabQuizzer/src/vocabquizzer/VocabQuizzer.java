@@ -439,6 +439,32 @@ public class VocabQuizzer
 				{"שָׂנֵא", "he hated"},
 				{"שָׁתָה", "he drank"}
 		});
+		allVocabWords.put("Lesson 20", new String[][]{
+				{"אמן", "he was faithful"},
+				{"אָרַר", "he cursed"},
+				{"גּוֹאֵל", "redeemer"},
+				{"גָּלָה", "he uncovered, revealed"},
+				{"גָּמָל", "camel"},
+				{"יוֹשֵׁב", "inhabitant"},
+				{"יוֹצֵר", "potter"},
+				{"יָצַר", "he formed"},
+				{"מוֹשִׁיעַ", "savior, deliverer"},
+				{"מַלְאָךְ", "angel, messenger"},
+				{"נָגַע", "he touched, smote"},
+				{"נָגַשׁ", "he approached"},
+				{"נָהָר", "river"},
+				{"סוֹפֵר", "scribe"},
+				{"פָּדָה", "he ransomed, redeemed"},
+				{"פָּשַׁע", "he rebelled, transgressed"},
+				{"רוֹאֶה", "seer, prophet"},
+				{"רוֹעֶה", "shepherd"},
+				{"רָעָה", "he pastured, tended"},
+				{"שַׂר", "prince, ruler"},
+				{"שָׁאַר", "he was left, left over"},
+				{"שׁוֹפֵט", "judge"},
+				{"שָׁקָה", "he drank"},
+				{"תּוֹעֵבָה", "abomination"}
+		});
 		return allVocabWords;
 	}
 	
