@@ -465,6 +465,26 @@ public class VocabQuizzer
 				{"שָׁקָה", "he drank"},
 				{"תּוֹעֵבָה", "abomination"}
 		});
+		allVocabWords.put("Lesson 21", new String[][]{
+				{"בּוֹשׁ", "to be ashamed, confounded"},
+				{"דָּבַק", "he cleaved, clung to"},
+				{"הָרָה", "(she) conceived, became pregnant"},
+				{"סוּר", "to turn aside"},
+				{"פָּנָה", "he turned towards, faced, prepared"},
+				{"רָחַץ", "he washed"},
+				{"אֹ֣זֶן", "ear"},
+				{"אֱנוֹשׁ", "man, mankind"},
+				{"בֶּ֣גֶד", "garment"},
+				{"בְּרָכָה", "blessing"},
+				{"גּוֹרָל", "lot, portion, share"},
+				{"גֶּ֣פֶן", "vine"},
+				{"גֶּ֣שֶׁם", "rain, shower"},
+				{"זְרֹעַ", "arm, strength"},
+				{"מוֹעֵד", "appointed time, place"},
+				{"עֵד", "a witness, testimony, evidence"},
+				{"עַ֣יִן", "eye, fountain"},
+				{"שֶׁ֣קֶר", "deception, falsehood"}
+		});
 		return allVocabWords;
 	}
 	
