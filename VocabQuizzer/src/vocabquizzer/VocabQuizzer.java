@@ -485,6 +485,26 @@ public class VocabQuizzer
 				{"עַ֣יִן", "eye, fountain"},
 				{"שֶׁ֣קֶר", "deception, falsehood"}
 		});
+		allVocabWords.put("Lesson 22", new String[][]{
+				{"אָחַז", "he seized, took possession"},
+				{"גָּנַב", "he stole"},
+				{"הָפַךְ", "he overturned, changed"},
+				{"הָרַס", "he broke down, destroyed"},
+				{"חָגַר", "he bound, girded"},
+				{"חדשׁ", "he renewed, repaired"},
+				{"חָפֵץ", "he took delight in, desired"},
+				{"עָרַךְ", "he arranged, set in order"},
+				{"אָז", "then"},
+				{"אַךְ", "surely, only"},
+				{"אֱמוּנָה", "faithfulness, fidelity"},
+				{"בְּאֵר", "well"},
+				{"בְּכוֹר", "first-born, oldest"},
+				{"דְּבַשׁ", "honey"},
+				{"חֹק", "statute"},
+				{"לָשׁוֹן", "tongue"},
+				{"מָ֣וֶת", "death"},
+				{"מִזְבֵּחַ", "altar, place of sacrifice"}
+		});
 		return allVocabWords;
 	}
 	
