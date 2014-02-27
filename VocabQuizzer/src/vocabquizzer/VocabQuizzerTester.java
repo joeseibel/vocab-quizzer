@@ -6,7 +6,7 @@ public class VocabQuizzerTester
 {
 	public static void main(String[] args)
 	{
-		testLessonInOrder("Lesson 22");
+		testLessonInOrder("Lesson 23");
 //		testIndividual("Lesson 10", 7);
 	}
 	

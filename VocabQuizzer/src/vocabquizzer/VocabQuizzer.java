@@ -505,6 +505,30 @@ public class VocabQuizzer
 				{"מָ֣וֶת", "death"},
 				{"מִזְבֵּחַ", "altar, place of sacrifice"}
 		});
+		allVocabWords.put("Lesson 23", new String[][]{
+				{"אָבָה", "he was willing"},
+				{"אָבַל", "he mourned"},
+				{"אזן", "he listened, heard"},
+				{"אָמֵץ", "he was strong, firm, bold"},
+				{"אָסַר", "he bound, imprisoned"},
+				{"אָפָה", "he baked"},
+				{"אָרַךְ", "he prolonged"},
+				{"אָשֵׁם", "he committed a wrong, was guilty"},
+				{"אֶ֣לֶף", "ox, thousand"},
+				{"גּוֹי", "nation"},
+				{"חוּץ", "a place outside the house, the outdoors, a street"},
+				{"מֵאָה", "hundred"},
+				{"פָּנִים", "face (faces)"},
+				{"קֹ֣דֶשׁ", "holiness, holy thing, sanctuary"},
+				{"שְׁנַ֣יִם", "two"},
+				{"שְׁתַּ֣יִם", "two"},
+				{"שָׁלשׁ", "three"},
+				{"שְׁלשָׁה", "three"},
+				{"אַרְבַּע", "four"},
+				{"אַרְבָּעָה", "four"},
+				{"חָמֵשׁ", "five"},
+				{"חֲמִשָּׁה", "five"}
+		});
 		return allVocabWords;
 	}
 	
