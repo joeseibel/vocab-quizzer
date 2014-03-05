@@ -529,6 +529,26 @@ public class VocabQuizzer
 				{"חָמֵשׁ", "five"},
 				{"חֲמִשָּׁה", "five"}
 		});
+		allVocabWords.put("Lesson 24", new String[][]{
+				{"בָּחַן", "he tested"},
+				{"בָּחַר", "he chose"},
+				{"בָּעַר", "he burned"},
+				{"זָעַק", "he cried out"},
+				{"מהר", "he hastened"},
+				{"נָחַל", "he took possession, inherited"},
+				{"נחם", "he was sorry, had compassion, suffered grief, repented"},
+				{"צָחַק", "he laughed"},
+				{"צָעַק", "he cried out"},
+				{"שָׂחַק", "he laughed, jested"},
+				{"שָׁחַט", "he killed, slaughtered"},
+				{"אָחֵר", "another, other"},
+				{"אַחַר", "behind, after"},
+				{"אֹיֵב", "enemy"},
+				{"בָּקָר", "herd, cattle"},
+				{"מִגְדָּל", "tower, fortress"},
+				{"זֶ֣בַח", "sacrifice"},
+				{"מִנְחָה", "offering, gift, tribute"}
+		});
 		return allVocabWords;
 	}
 	
