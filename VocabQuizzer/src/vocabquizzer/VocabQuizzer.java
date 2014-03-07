@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class VocabQuizzer
@@ -25,30 +24,27 @@ public class VocabQuizzer
 			Collections.shuffle(wordPairList);
 			
 			final QuizzerFrame frame = createQuizzerFrame();
-			int numberCorrectOnFirstTry = 0;
-			int numberCorrectWithMultipleGuesses = 0;
-			int numberTranslationShown = 0;
+			final ArrayList<String[]> correctOnFirstTry = new ArrayList<String[]>();
+			final ArrayList<String[]> correctWithMultipleGuesses = new ArrayList<String[]>();
+			final ArrayList<String[]> translationShown = new ArrayList<String[]>();
 			int wordPairListIndex = 0;
 			for (String[] wordPair : wordPairList)
 			{
-				switch (frame.showNextWord(wordPair[0], wordPair[1], wordPairListIndex + "/" + wordPairList.size(), numberCorrectOnFirstTry,
-						numberCorrectWithMultipleGuesses, numberTranslationShown))
+				switch (frame.showNextWord(wordPair[0], wordPair[1], wordPairListIndex + "/" + wordPairList.size(), correctOnFirstTry.size(),
+						correctWithMultipleGuesses.size(), translationShown.size()))
 				{
 					case CORRECT:
-						numberCorrectOnFirstTry++;
+						correctOnFirstTry.add(wordPair);
 						break;
 					case CORRECT_WITH_MULTIPLE_GUESSES:
-						numberCorrectWithMultipleGuesses++;
+						correctWithMultipleGuesses.add(wordPair);
 						break;
 					case TRANSLATION_SHOWN:
-						numberTranslationShown++;
+						translationShown.add(wordPair);
 						break;
 				}
 				wordPairListIndex++;
 			}
-			final int finalNumberCorrectOnFirstTry = numberCorrectOnFirstTry;
-			final int finalNumberCorrectWithMultipleGuesses = numberCorrectWithMultipleGuesses;
-			final int finalNumberTranslationShown = numberTranslationShown;
 			try
 			{
 				SwingUtilities.invokeAndWait(new Runnable()
@@ -56,9 +52,7 @@ public class VocabQuizzer
 					@Override
 					public void run()
 					{
-						JOptionPane.showMessageDialog(frame, finalNumberCorrectOnFirstTry + " Correct on the first try.\n" + finalNumberCorrectWithMultipleGuesses +
-								" Correct with multiple guesses.\n" + finalNumberTranslationShown + " Translations shown.", "Vocab Quizzer Results",
-								JOptionPane.INFORMATION_MESSAGE);
+						new ResultsDialog(frame, correctOnFirstTry, correctWithMultipleGuesses, translationShown).setVisible(true);
 						frame.dispose();
 					}
 				});
