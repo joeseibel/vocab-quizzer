@@ -543,6 +543,26 @@ public class VocabQuizzer
 				{"זֶ֣בַח", "sacrifice"},
 				{"מִנְחָה", "offering, gift, tribute"}
 		});
+		allVocabWords.put("Lesson 25", new String[][]{
+				{"בָּלַע", "he swallowed, consumed"},
+				{"בָּקַע", "he split open"},
+				{"גָּבַהּ", "he was high, proud"},
+				{"זָרַע", "he sowed"},
+				{"כָּרַע", "he knelt, bowed down"},
+				{"מָשַׁח", "he anointed"},
+				{"סָלַח", "he forgave"},
+				{"פָּגַע", "he met, interceded"},
+				{"פָּתַח", "he opened"},
+				{"קָרַע", "he tore"},
+				{"רָצַח", "he killed, murdered"},
+				{"שָׂבַע", "he was satisfied, sated"},
+				{"בָּמָה", "high place"},
+				{"צוּר", "rock"},
+				{"קֵץ", "end"},
+				{"שֻׁלְחָן", "table"},
+				{"שֶׁ֣מֶשׁ", "sun"},
+				{"תּוֹלְדוֹת", "generations"}
+		});
 		return allVocabWords;
 	}
 	
