@@ -563,6 +563,26 @@ public class VocabQuizzer
 				{"שֶׁ֣מֶשׁ", "sun"},
 				{"תּוֹלְדוֹת", "generations"}
 		});
+		allVocabWords.put("Lesson 26", new String[][]{
+				{"חבא", "he hid"},
+				{"טָמֵא", "he was unclean"},
+				{"נבא", "he prophesied"},
+				{"צָמֵא", "he was thirsty"},
+				{"קָבַץ", "he collected, gathered"},
+				{"קָדַשׁ", "he was holy"},
+				{"שׁחת", "he destroyed, corrupted"},
+				{"שָׁלֵם", "he was whole, complete"},
+				{"כְּלִי", "tool, weapon, vessel"},
+				{"נְאֻם", "utterance, oracle"},
+				{"סָבִיב", "around, surrounding"},
+				{"עֶ֣שֶׂר", "ten"},
+				{"עֲשָׂרָה", "ten"},
+				{"צֶ֣דֶק", "righteousness"},
+				{"צְדָקָה", "righteousness"},
+				{"שֶׁ֣בַע", "seven"},
+				{"שִׁבְעָה", "seven"},
+				{"שַׁ֣עַר", "gate"}
+		});
 		return allVocabWords;
 	}
 	
