@@ -583,6 +583,26 @@ public class VocabQuizzer
 				{"שִׁבְעָה", "seven"},
 				{"שַׁ֣עַר", "gate"}
 		});
+		allVocabWords.put("Lesson 27", new String[][]{
+				{"בָּכָה", "he wept"},
+				{"זָנָה", "he committed adultery, fornication"},
+				{"חָזָה", "he saw"},
+				{"חָלָה", "he was sick, weak"},
+				{"חָנָה", "he encamped"},
+				{"חָרָה", "it was hot, burned"},
+				{"יָרָה", "he taught"},
+				{"כָּסָה", "he covered, concealed"},
+				{"עָנָה", "he answered, replied"},
+				{"צָפָה", "he kept watch, spied"},
+				{"קָנָה", "he took possession, acquired, bought"},
+				{"שׁחה", "he bowed down, worshipped"},
+				{"אַמָּה", "cubit"},
+				{"מַחֲנֶה", "camp, encampment"},
+				{"מַטֶּה", "staff, rod, branch, tribe"},
+				{"מַעֲשֶׂה", "work, deed"},
+				{"מִשְׁפָּחָה", "family, clan"},
+				{"עֹלָה", "whole burnt offering"}
+		});
 		return allVocabWords;
 	}
 	
