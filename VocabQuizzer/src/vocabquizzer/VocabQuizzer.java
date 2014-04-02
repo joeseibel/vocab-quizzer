@@ -603,6 +603,26 @@ public class VocabQuizzer
 				{"מִשְׁפָּחָה", "family, clan"},
 				{"עֹלָה", "whole burnt offering"}
 		});
+		allVocabWords.put("Lesson 28", new String[][]{
+				{"נבט", "he saw, looked upon"},
+				{"נָגַף", "he smote, struck"},
+				{"נָדַח", "he drove out, banished, expelled"},
+				{"נָדַר", "he vowed"},
+				{"נהל", "he led, guided, refreshed"},
+				{"נָזָה", "he spurted, spattered"},
+				{"נָטַע", "he planted"},
+				{"נָטַשׁ", "he left, forsook"},
+				{"נסה", "he tested, tried"},
+				{"נָסַע", "he set out, departed, journeyed"},
+				{"נצב", "he stationed himself, took his stand"},
+				{"נָצר", "he watched, guarded, kept"},
+				{"נקה", "he was clean, innocent, guiltless"},
+				{"נקם", "he avenged, took vengeance"},
+				{"נשׂג", "he reached, overtook, attained"},
+				{"נָתַץ", "he pulled down, broke down"},
+				{"חַ֣יִל", "strength, wealth, army"},
+				{"נַחֲלָה", "possession, inheritance"}
+		});
 		return allVocabWords;
 	}
 	
