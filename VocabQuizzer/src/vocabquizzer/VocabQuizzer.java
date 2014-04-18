@@ -623,6 +623,66 @@ public class VocabQuizzer
 				{"חַ֣יִל", "strength, wealth, army"},
 				{"נַחֲלָה", "possession, inheritance"}
 		});
+		allVocabWords.put("Lesson 29", new String[][]{
+				{"גּוּר", "to sojourn"},
+				{"גִּיל", "to rejoice"},
+				{"דִּין", "to judge"},
+				{"חוּל/חִיל", "to whirl, dance, writhe"},
+				{"לוּן/לִין", "to lodge, pass the night, abide"},
+				{"מוּל", "to circumcise"},
+				{"נוּחַ", "to rest, come to rest"},
+				{"נוּס", "to flee"},
+				{"נוּעַ", "to quiver, stagger, tremble"},
+				{"עוּר", "to arouse oneself"},
+				{"פּוּץ", "to be scattered"},
+				{"רוּץ", "to run"},
+				{"רִיב", "to strive, contend"},
+				{"שִׁיר", "to sing"},
+				{"שִׁית", "to put, place, set"},
+				{"כָּשַׁל", "he stumbled"},
+				{"לָכַד", "he seized, captured"},
+				{"שָׁבַת", "he ceased, rested"}
+		});
+		allVocabWords.put("Lesson 30", new String[][]{
+				{"יָבֵשׁ", "he dried up, was dry"},
+				{"יָגַע", "he labored, grew weary"},
+				{"ידה", "he praised, confessed, gave thanks"},
+				{"יָטַב", "he did well, was good"},
+				{"יכח", "he reproved, rebuked"},
+				{"יָנַק", "he sucked"},
+				{"יָסַד", "he founded, established"},
+				{"יָסַר", "he admonished, chastised"},
+				{"יָעַץ", "he counseled, advised"},
+				{"יצב", "he stationed himself, took his stand"},
+				{"יָצַק", "he poured out"},
+				{"יָצַת", "he kindled, set on fire"},
+				{"יָשַׁר", "he was straight, straight-forward, upright"},
+				{"יתר", "he was left over, remained"},
+				{"קָטַר", "he burned incense, caused a sacrifice to smoke"},
+				{"שׁרת", "he ministered, served"},
+				{"סָגַר", "he shut, closed"},
+				{"שׁכם", "he arose early"}
+		});
+		allVocabWords.put("Lesson 31", new String[][]{
+				{"בָּזַז", "he plundered, destroyed"},
+				{"בָּלַל", "he mixed, confounded"},
+				{"דָּמַם", "he was silent, speechless"},
+				{"הלל", "he praised"},
+				{"חלל", "he was polluted"},
+				{"חָנַן", "he was gracious, showed favor"},
+				{"חָתַת", "he was shattered, dismayed"},
+				{"מָדַד", "he measured"},
+				{"נָדַד", "he fled"},
+				{"סָבַב", "he surrounded, turned about, went around"},
+				{"צָרַר", "he was in distress"},
+				{"רָנַן", "he shouted for joy, cried out"},
+				{"שָׁדַד", "he devastated, destroyed"},
+				{"שָׁמַם", "he was appalled, devastated"},
+				{"תָּמַם", "he was finished, completed"},
+				{"גְּבוּל", "boundary, border"},
+				{"גִּבּוֹר", "hero, mighty one"},
+				{"קֶ֣שֶׁת", "bow"}
+		});
 		return allVocabWords;
 	}
 	
