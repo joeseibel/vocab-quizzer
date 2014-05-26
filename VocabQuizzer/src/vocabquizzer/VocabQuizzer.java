@@ -20,7 +20,8 @@ public class VocabQuizzer
 			ArrayList<String[]> wordPairList = new ArrayList<String[]>();
 			for (String selectedLesson : selectedLessons)
 				for (String[] wordPair : ALL_VOCAB_WORDS.get(selectedLesson))
-					wordPairList.add(wordPair);
+					if (!wordPairExistsInList(wordPair, wordPairList))
+						wordPairList.add(wordPair);
 			Collections.shuffle(wordPairList);
 			
 			final QuizzerFrame frame = createQuizzerFrame();
@@ -66,6 +67,16 @@ public class VocabQuizzer
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	private static boolean wordPairExistsInList(String[] wordPair, ArrayList<String[]> wordPairList)
+	{
+		for (String[] existingPair : wordPairList)
+		{
+			if (existingPair[0].equals(wordPair[0]) && existingPair[1].equals(wordPair[1]))
+				return true;
+		}
+		return false;
 	}
 	
 	private static LinkedHashMap<String, String[][]> createAllVocabWords()
@@ -682,6 +693,93 @@ public class VocabQuizzer
 				{"גְּבוּל", "boundary, border"},
 				{"גִּבּוֹר", "hero, mighty one"},
 				{"קֶ֣שֶׁת", "bow"}
+		});
+		allVocabWords.put("Test 1", new String[][]{
+				{"נָהָר", "river"},
+				{"גּוֹאֵל", "redeemer"},
+				{"שַׂר", "prince, ruler"},
+				{"מוֹשִׁיעַ", "savior, deliverer"},
+				{"יָסַף", "he added"},
+				{"מָאַס", "he rejected, despised"},
+				{"רוּם", "to be high, exalted"},
+				{"שָׂנֵא", "he hated"},
+				{"בֶּ֣טֶן", "belly, body, womb"},
+				{"סָתַר", "he concealed"}
+		});
+		allVocabWords.put("Test 2", new String[][]{
+				{"בְּרָכָה", "blessing"},
+				{"גֶּ֣פֶן", "vine"},
+				{"בּוֹשׁ", "to be ashamed, confounded"},
+				{"דָּבַק", "he cleaved, clung to"},
+				{"עָבַר", "he passed over, through"},
+				{"עוֹלָם", "eternity"},
+				{"כָּנָף", "wing, skirt"},
+				{"דֶּ֣שֶׁא", "grass"}
+		});
+		allVocabWords.put("Test 3", new String[][]{
+				{"אָחַז", "he seized, took possession"},
+				{"גָּנַב", "he stole"},
+				{"הָרַס", "he broke down, destroyed"},
+				{"מִזְבֵּחַ", "altar, place of sacrifice"},
+				{"לָשׁוֹן", "tongue"},
+				{"חָיָה", "he lived, revived"},
+				{"שָׁאַל", "he asked"},
+				{"חֹק", "statute"}
+		});
+		allVocabWords.put("Test 4", new String[][]{
+				{"חוּץ", "a place outside the house, the outdoors, a street"},
+				{"אֵשׁ", "fire"},
+				{"אָסַר", "he bound, imprisoned"},
+				{"רֶ֣גֶל", "foot"},
+				{"נַעֲרָה", "maiden, young woman"},
+				{"מָה", "What?"},
+				{"יָדַע", "he knew"}
+		});
+		allVocabWords.put("Test 6a", new String[][]{
+				{"קָרַע", "he tore"},
+				{"גָּבַהּ", "he was high, proud"},
+				{"קֵץ", "end"},
+				{"בָּמָה", "high place"},
+				{"שָׁחַט", "he killed, slaughtered"},
+				{"נָחַל", "he took possession, inherited"},
+				{"רוֹעֶה", "shepherd"},
+				{"עָלָה", "he went up"}
+		});
+		allVocabWords.put("Test 6b", new String[][]{
+				{"שָׂנֵא", "he hated"},
+				{"יָשַׁב", "he sat, dwelt"},
+				{"אֹיֵב", "enemy"},
+				{"נָחַל", "he took possession, inherited"},
+				{"בָּקָר", "herd, cattle"},
+				{"מַלְאָךְ", "angel, messenger"},
+				{"מִנְחָה", "offering, gift, tribute"}
+		});
+		allVocabWords.put("Test 8", new String[][]{
+				{"צָפָה", "he kept watch, spied"},
+				{"קָנָה", "he took possession, acquired, bought"},
+				{"מַחֲנֶה", "camp, encampment"},
+				{"שָׁחַט", "he killed, slaughtered"},
+				{"בָּקָר", "herd, cattle"},
+				{"אֹיֵב", "enemy"},
+				{"מִגְדָּל", "tower, fortress"},
+				{"גּוֹרָל", "lot, portion, share"}
+		});
+		allVocabWords.put("Test 10", new String[][]{
+				{"נַחֲלָה", "possession, inheritance"},
+				{"נסה", "he tested, tried"},
+				{"נָסַע", "he set out, departed, journeyed"},
+				{"חַ֣יִל", "strength, wealth, army"},
+				{"תְּפִלָּה", "prayer"},
+				{"נָטַשׁ", "he left, forsook"},
+				{"חוּץ", "a place outside the house, the outdoors, a street"}
+		});
+		allVocabWords.put("Test 14", new String[][]{
+				{"בָּלַל", "he mixed, confounded"},
+				{"גֶּ֣פֶן", "vine"},
+				{"בּוֹשׁ", "to be ashamed, confounded"},
+				{"מוּל", "to circumcise"},
+				{"רִיב", "to strive, contend"},
+				{"נָהָר", "river"}
 		});
 		return allVocabWords;
 	}
